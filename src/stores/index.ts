@@ -4,7 +4,7 @@ import AppStore from './app-store';
 
 export class Stores {
   public router: RouterStore;
-  public appStore: AppStore;
+  public appStore: AppStore;s
 
   constructor() {
     this.router = new RouterStore();

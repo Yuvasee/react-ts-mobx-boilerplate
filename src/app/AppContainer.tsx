@@ -15,14 +15,12 @@ export default class AppContainer extends React.Component {
   public render() {
     return (
       <Provider stores={Stores}>
-        <Router history={historyWithStore}>
-          <div>
-            <App/>
-            {process.env.NODE_ENV !== 'production' &&
-              <DevTools/>
-            }
-          </div>
-        </Router>
+        <Router history={historyWithStore}><>
+          <App/>
+          {process.env.NODE_ENV !== 'production' &&
+            <DevTools/>
+          }
+        </></Router>
       </Provider>
     );
   }

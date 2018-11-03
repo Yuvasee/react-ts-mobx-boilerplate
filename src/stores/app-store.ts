@@ -1,18 +1,20 @@
 import { action, observable } from 'mobx';
+import { Stores } from './';
 
 export default class AppStore {
-  public stores: any;
+  public stores: Stores;
 
-  @observable public appState: boolean;
+  @observable public color: string;
 
   constructor() {
-    this.appState = true;
+    this.color = '#d3d3d3';
 
-    this.toggleState = this.toggleState.bind(this);
+    this.setRandomColor = this.setRandomColor.bind(this);
   }
 
   @action
-  public toggleState() {
-    this.appState = !this.appState;
+  public setRandomColor() {
+    const r = () => Math.floor(Math.random() * (0xea - 0xba)) + 0xba;
+    this.color = '#' + r().toString(16) + r().toString(16) + r().toString(16);
   }
 }
