@@ -57,7 +57,7 @@ export default class Main extends React.Component<Props, any> {
         style={{background: this.props.stores.appStore.color}}
       >
         {this.state.text}
-        <br/><br/>
+        <br/>
         <Link to="/fun">fun!</Link>
       </div >
     );

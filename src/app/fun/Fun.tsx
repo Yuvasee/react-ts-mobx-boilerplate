@@ -22,16 +22,15 @@ export default class Fun extends React.Component<Props, any> {
 
     const a = funText.split(/\s+/);
 
-    console.log(a);
-    
-
     return (
       <div className="fun" style={{background: color}}>
-        {a.map((el, i) => (
-          <span key={i}>
-            {el.length > 1 ? <Shuffly text={el}/> : el}&#32;
-          </span>
-        ))}
+        <div>
+          {a.map((el, i) => (
+            <span key={i}>
+              {el.length > 1 ? <Shuffly text={el}/> : el}&#32;
+            </span>
+          ))}
+        </div>
       </div>
     );
   }

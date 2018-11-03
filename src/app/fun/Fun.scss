@@ -1,6 +1,14 @@
 .fun {
   height: 100vh;
-  padding: 15vh 25vw;
+  padding: 0 25vw;
   width: 50vw;
-  line-height: 150%;
+  position: relative;
+
+  & > div {
+    line-height: 150%;
+    width: 50vw;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
