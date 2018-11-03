@@ -1,6 +1,6 @@
 {
   "name": "react-ts-mobx-boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Simple Webpack boilerplate for React + Typescript + MobX + SASS stack",
   "private": true,
   "scripts": {

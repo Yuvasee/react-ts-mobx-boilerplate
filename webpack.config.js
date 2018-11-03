@@ -35,8 +35,8 @@ module.exports = (env) => {
     },
 
     output: {
-      filename: 'js/[hash].bundle.js',
-      chunkFilename: 'js/[name].bundle.js',  
+      filename: 'static/js/[hash].bundle.js',
+      chunkFilename: 'static/js/[name].bundle.js',  
       publicPath: '/',
       path: buildPath,
     },
@@ -143,7 +143,7 @@ module.exports = (env) => {
             limit: 8192,
             fallback: 'file-loader',
             name: '[name].[ext]',
-            outputPath: 'img/',
+            outputPath: 'static/img/',
           }
         },
         {
@@ -154,7 +154,7 @@ module.exports = (env) => {
           test: /\.(ttf|eot|woff|woff2)$/,
           loader: 'file-loader',
           options: {
-            outputPath: 'fonts/',
+            outputPath: 'static/fonts/',
             name: '[name].[ext]'
           }
         },
@@ -162,7 +162,7 @@ module.exports = (env) => {
           test: /\.md$/,
           loader: 'file-loader',
           options: {
-            outputPath: 'md/',
+            outputPath: 'static/md/',
             name: '[name].[ext]'
           }
         }
@@ -183,7 +183,7 @@ module.exports = (env) => {
       })),
       ifProduction(new OptimizeCSSAssetsPlugin({})),
       new MiniCssExtractPlugin({
-        filename: 'css/bundle-[hash].css'
+        filename: 'static/css/bundle-[hash].css'
       }),
       new HtmlWebpackPlugin({
         path: buildPath,
@@ -210,7 +210,7 @@ module.exports = (env) => {
       new CopyWebpackPlugin([
         {
           from: 'src/assets/favicons',
-          to: 'favicons',
+          to: 'static/favicons',
           toType: 'dir'
         },
       ])
