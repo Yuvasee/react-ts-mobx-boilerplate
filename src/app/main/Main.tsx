@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { inject, observer } from 'mobx-react';
+import { Link } from 'react-router-dom';
 
 import { Stores } from '../../stores';
 import { shuffle } from '../../helpers/string';
@@ -56,6 +57,8 @@ export default class Main extends React.Component<Props, any> {
         style={{background: this.props.stores.appStore.color}}
       >
         {this.state.text}
+        <br/><br/>
+        <Link to="/fun">fun!</Link>
       </div >
     );
   }

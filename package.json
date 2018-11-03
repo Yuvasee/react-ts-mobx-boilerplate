@@ -1,6 +1,6 @@
 {
   "name": "react-ts-mobx-boilerplate",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Simple Webpack boilerplate for React + Typescript + MobX + SASS stack",
   "private": true,
   "scripts": {
@@ -52,6 +52,7 @@
     "mobx-react-router": "^4.0.5",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-router": "^4.3.1"
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1"
   }
 }
