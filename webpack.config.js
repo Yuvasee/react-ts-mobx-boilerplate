@@ -36,11 +36,18 @@ module.exports = (env) => {
 
     output: {
       filename: 'js/[hash].bundle.js',
+      chunkFilename: 'js/[name].bundle.js',  
       publicPath: '/',
       path: buildPath,
     },
 
-    devtool: propIf(env === 'development', 'inline-source-map', 'source-map'),
+    optimization: {
+      splitChunks: {
+        chunks: 'all'
+      }
+    },
+
+    devtool: propIf(env === 'development', 'inline-source-map', 'cheap-source-map'),
 
     devServer: ifDevelopment({
       host: HOST,
@@ -77,7 +84,8 @@ module.exports = (env) => {
             options: removeEmpty({
               babelrc: false,
               presets: [
-                ["@babel/preset-env", {"targets": {"browsers": ["> 1%", "last 2 versions"]}}]
+                ["@babel/preset-env", {"targets": {"browsers": ["> 1%", "last 2 versions"]}}],
+                "@babel/preset-react"
               ],
               plugins: ifDevelopment(["react-hot-loader/babel"]),
               cacheDirectory: ifDevelopment(true),
@@ -96,7 +104,8 @@ module.exports = (env) => {
               babelOptions: removeEmpty({
                 babelrc: false,
                 presets: [
-                  ["@babel/preset-env", {"targets": {"browsers": ["> 1%", "last 2 versions"]}}]
+                  ["@babel/preset-env", {"targets": {"browsers": ["> 1%", "last 2 versions"]}}],
+                  "@babel/preset-react"
                 ],
                 plugins: ifDevelopment(["react-hot-loader/babel"]),
                 compact: ifProduction(true),
