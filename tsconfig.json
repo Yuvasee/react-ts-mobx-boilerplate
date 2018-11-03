@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "module": "none",
+    "moduleResolution": "node",
+    "target": "es6",
+    "sourceMap": true,
+    "outDir": "./build/",
+    "preserveConstEnums": true,
+    "allowJs": true,
+    "experimentalDecorators": true,
+    "baseUrl": "./"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
