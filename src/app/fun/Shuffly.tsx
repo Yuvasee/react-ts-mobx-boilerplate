@@ -19,14 +19,14 @@ export default class Shuffly extends React.Component<Props, any> {
     }
   }
 
-  public over() {
+  public handleMouseOver() {
     this.shiver();
     this.setState({
       timer: setInterval(() => this.shiver(), 200),      
     });
   }
 
-  public out() {
+  public handleMouseOut() {
     clearInterval(this.state.timer);    
     this.setState({
       textActive: this.state.text,
@@ -52,7 +52,9 @@ export default class Shuffly extends React.Component<Props, any> {
     const { textActive, shiver } = this.state;
 
     return (
-      <span onMouseOver={this.over.bind(this)} onMouseOut={this.out.bind(this)}
+      <span
+        onMouseOver={this.handleMouseOver.bind(this)}
+        onMouseOut={this.handleMouseOut.bind(this)}
         style={shiver}
       >
         {textActive}
